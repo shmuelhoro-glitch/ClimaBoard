@@ -2,11 +2,13 @@ import json
 
 
 def get_all() -> dict:
-    with open("./data/data.json", "r", encoding="utf-8") as f:
-        data = json.load(f)
-        if not data:
-            return {}
-        return data
+    try:
+        with open("./data/data.json", "r", encoding="utf-8") as f:
+            data = json.load(f)
+            if data:
+                return data
+    except json.JSONDecodeError:
+        return {}
 
 
 def save_favorites(updated_data):
@@ -18,3 +20,4 @@ def save_favorites(updated_data):
 
 # print(get_all())
 # print(save_favorites({"jerusalem":{"lat": 31.76904, "lon": 35.21633}}))
+# print(get_all())

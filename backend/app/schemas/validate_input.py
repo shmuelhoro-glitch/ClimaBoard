@@ -2,13 +2,12 @@ from pydantic import BaseModel, Field
 
 
 class AddNewFavoriteCity(BaseModel):
-    explorerName: str = Field(min_length=2, max_length=20)
     city_name: str = Field(min_length=2, max_length=20)
     lat: float
     lon: float
 
 
-class ExplorerNameValid(BaseModel):
+class UserNameValid(BaseModel):
     explorerName: str = Field(min_length=2, max_length=20)
 
 
