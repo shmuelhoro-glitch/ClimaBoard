@@ -10,7 +10,7 @@ def append_favorite(username: str, city: str, lat, lon):
     if username not in data:
         data[username] = []
 
-    data[username].append({"city": city, "lat": float(lat), "lon": float(lon)})
+    data[username].append({"city": city.lower(), "lat": float(lat), "lon": float(lon)})
     save_favorites(data)
     return
 
@@ -18,7 +18,7 @@ def append_favorite(username: str, city: str, lat, lon):
 def remove_by_name(username:str , city_name:str ):
     data = get_all()
     for i,favorite in enumerate(data[username]):
-        if favorite["city"] == city_name:
+        if favorite["city"] == city_name.lower():
             del data[username][i]
             save_favorites(data)
             return True

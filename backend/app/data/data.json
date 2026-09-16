@@ -1,12 +1,22 @@
 {
-  "shmuel": [
+  "שמואל": [
     {
       "city": "jerusalem",
       "lat": 31.76904,
       "lon": 35.21633
+    },
+    {
+      "city": "Paris",
+      "lat": 48.85341,
+      "lon": 2.3488
+    },
+    {
+      "city": "faris",
+      "lat": 48.85341,
+      "lon": 2.3488
     }
   ],
-  "michael": [
+  "מיכאל": [
     {
       "city": "jerusalem",
       "lat": 31.76904,

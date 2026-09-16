@@ -5,16 +5,15 @@ from schemas.validate_input import AddNewFavoriteCity
 
 router = APIRouter()
 
-@router.post("/{username}")
+@router.post("/{username}", status_code=201)
 def add_new_favorite(username: str, body: AddNewFavoriteCity):
     append_favorite(username, body.city_name, body.lat, body.lon)
-    return get_all_favorites()
+    return get_all_favorites(username)
 
 @router.get("/{username}")
-def get_favorites_router(name: str):
-    data = get_all_favorites(name)
-    print(data)
-    return data
+def get_favorites_router(username: str):
+    return get_all_favorites(username)
+    
 
 
 @router.delete("/{username}/{city}")

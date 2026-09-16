@@ -11,7 +11,7 @@ def get_current_weather(lat, lon):
 
 
 @router.get('/daily')
-def get_daily_weather(lat, lon, days = 1):
+def get_daily_weather(lat, lon, days:int = 1):
     if days < 1 or days > 16:
         raise HTTPException(400, "invalid amount days")
     return daily_weather(lat, lon, days)
